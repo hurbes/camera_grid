@@ -135,25 +135,27 @@ class _ActiveGyroCameraGridState extends State<_ActiveGyroCameraGrid>
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        RepaintBoundary(
-          child: CustomPaint(
-            painter: CameraGridPainter(
-              rotationAngle: _rotationAngle,
-              morphProgress: _morphAnimation.value,
-              gridColor: widget.gridColor.withOpacity(0.5),
-              accentColor: widget.accentColor,
-              gridLineWidth: widget.gridLineWidth,
-              movingBorderRadius: widget.movingBorderRadius,
-              isSnapped: _isSnapped,
-              snapThreshold: widget.snapThreshold,
+    return IgnorePointer(
+      child: Stack(
+        children: [
+          RepaintBoundary(
+            child: CustomPaint(
+              painter: CameraGridPainter(
+                rotationAngle: _rotationAngle,
+                morphProgress: _morphAnimation.value,
+                gridColor: widget.gridColor.withOpacity(0.5),
+                accentColor: widget.accentColor,
+                gridLineWidth: widget.gridLineWidth,
+                movingBorderRadius: widget.movingBorderRadius,
+                isSnapped: _isSnapped,
+                snapThreshold: widget.snapThreshold,
+              ),
+              size: Size.infinite,
             ),
-            size: Size.infinite,
           ),
-        ),
-        widget.child,
-      ],
+          widget.child,
+        ],
+      ),
     );
   }
 }

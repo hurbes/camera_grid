@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.3] - 2024-10-18
+
+## Changed
+ - Updated Readme and example project
+
 ## [0.0.2] - 2024-10-18
 
 ### Changed

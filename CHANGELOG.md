@@ -1,16 +1,16 @@
 # Changelog
 
-## [0.0.4] - 2024-10-18
+## [0.0.4] 
 
 ## Changed
  - Updated Example project
 
-## [0.0.3] - 2024-10-18
+## [0.0.3] 
 
 ## Changed
  - Updated Readme and example project
 
-## [0.0.2] - 2024-10-18
+## [0.0.2] 
 
 ### Changed
 - Refactored `CameraGrid` to use a separate `_ActiveGyroCameraGrid` widget, improving performance when grid is disabled and simplifying the toggle mechanism.
@@ -19,7 +19,7 @@
 ### Fixed
 - Eliminated unnecessary resource initialization when grid is disabled.
 
-## [0.0.1] - 2024-10-18
+## [0.0.1] 
 
 🎉 Initial release of Gyro Camera Grid! 🎉
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.5]
+
+- Fixed critical bug: Grid no longer absorbs touch events, allowing interaction with underlying camera preview.
+- Enhanced flexibility: Grid can be used as both wrapper and overlay without affecting touch functionality.
+
 ## [0.0.4] 
 
 ## Changed

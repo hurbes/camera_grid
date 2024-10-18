@@ -8,6 +8,8 @@ Hey there, Flutter enthusiasts! 👋 Welcome to the Gyro Camera Grid package. Th
 - Smooth transitions between portrait and landscape modes
 - Customizable grid color, accent color, and line width
 - Snapping behavior with adjustable threshold
+- Easy to enable/disable without performance overhead
+- Optional child widget for flexibility
 
 ## 🚀 Getting Started
 
@@ -15,39 +17,56 @@ First things first, let's add this package to your project:
 
 ```yaml
 dependencies:
-  camera_grid: ^0.0.1
+  camera_grid: ^0.0.2
 ```
 
 Don't forget to run `flutter pub get`! 🏃‍♂️💨
 
 ## 🎨 How to Use
 
-Using the Gyro Camera Grid is as easy as pie 🥧! Just wrap your camera preview widget with `CameraGrid`, and you're good to go!
+Using the Gyro Camera Grid is as easy as pie 🥧! You can use it with or without a child widget. Here are a couple of examples:
+
+### With camera_awesome package:
 
 ```dart
 import 'package:flutter/material.dart';
+import 'package:camera_awesome/camera_awesome.dart';
 import 'package:camera_grid/camera_grid.dart';
 
-class CameraScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: CameraGrid(
-        child: YourCameraPreviewWidget(),
-        gridColor: Colors.white,
-        accentColor: Colors.blue,
-        gridLineWidth: 1.0,
-        movingBorderRadius: 4.0,
-      ),
-    );
-  }
-}
+CameraAwesomeBuilder.custom(
+  saveConfig: SaveConfig.photo(),
+  builder: (state, preview) => state.when(
+    onPreparingCamera: (preparingCameraState) => Container(
+      color: Colors.black,
+    ),
+    onPreviewMode: (previewCameraState) {
+      return previewCameraState.focus();
+    },
+    onPhotoMode: (photoCompleteState) {
+      return const CameraGrid();
+    },
+  ),
+)
+```
+
+### With camera package:
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+import 'package:camera_grid/camera_grid.dart';
+
+CameraPreview(
+  controller,
+  child: const CameraGrid(),
+)
 ```
 
 ## ⚙️ Customization
 
 Want to make it your own? No problem! Here are the customization options:
 
+- `child`: Optional child widget (default: null)
 - `gridColor`: The color of the grid lines (default: white)
 - `accentColor`: The color of the alignment box when snapped (default: blue)
 - `gridLineWidth`: The width of the grid lines (default: 1.0)
@@ -55,6 +74,14 @@ Want to make it your own? No problem! Here are the customization options:
 - `morphDuration`: The duration of the morphing animation (default: 150ms)
 - `morphCurve`: The curve of the morphing animation (default: Curves.easeOutQuad)
 - `snapThreshold`: The threshold for snapping in radians (default: 1.5 degrees)
+- `isGridEnabled`: Toggle to enable/disable the grid overlay (default: true)
+
+## 🆕 What's New in 0.0.2
+
+- Made the child widget optional for more flexibility
+- Improved performance by avoiding unnecessary initialization when grid is disabled
+- Implemented a cleaner toggle mechanism using Dart 3's switch expression
+- Enhanced customization options
 
 ## 🤔 Why This Package?
 

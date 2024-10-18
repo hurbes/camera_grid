@@ -135,10 +135,11 @@ class _ActiveGyroCameraGridState extends State<_ActiveGyroCameraGrid>
 
   @override
   Widget build(BuildContext context) {
-    return IgnorePointer(
-      child: Stack(
-        children: [
-          RepaintBoundary(
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        RepaintBoundary(
+          child: IgnorePointer(
             child: CustomPaint(
               painter: CameraGridPainter(
                 rotationAngle: _rotationAngle,
@@ -153,9 +154,9 @@ class _ActiveGyroCameraGridState extends State<_ActiveGyroCameraGrid>
               size: Size.infinite,
             ),
           ),
-          widget.child,
-        ],
-      ),
+        ),
+        widget.child,
+      ],
     );
   }
 }

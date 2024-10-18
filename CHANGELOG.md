@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.4] - 2024-10-18
+
+## Changed
+ - Updated Example project
+
 ## [0.0.3] - 2024-10-18
 
 ## Changed

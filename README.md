@@ -11,6 +11,13 @@ Hey there, Flutter enthusiasts! 👋 Welcome to the Gyro Camera Grid package. Th
 - Easy to enable/disable without performance overhead
 - Optional child widget for flexibility
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/hurbes/camera_grid/main/screenshots/sv_0.gif" alt="Gyro Camera Grid Demo" width="200"/>
+  <img src="https://raw.githubusercontent.com/hurbes/camera_grid/main/screenshots/ss_0.png" alt="Gyro Camera Grid Screenshot" width="200"/>
+</p>
+
 ## 🚀 Getting Started
 
 First things first, let's add this package to your project:

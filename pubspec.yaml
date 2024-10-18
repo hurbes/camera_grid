@@ -1,7 +1,7 @@
 name: camera_grid
-description: "A new Flutter package project."
+description: "A Flutter widget that provides a dynamic camera grid overlay with gyroscope-based rotation and orientation-adaptive alignment box."
 version: 0.0.1
-homepage:
+homepage: https://github.com/hurbes/camera_grid
 
 environment:
   sdk: ^3.5.3
